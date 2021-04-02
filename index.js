@@ -145,29 +145,29 @@ function main() {
   for (let i = 0; i < arr2.length; i++) {
     BST2.insert(arr2[i], arr2[i])
   }
-  // console.log(BST1)
-  // console.log(tree(BST1))
-  // console.log(height(BST1))
-  // console.log(isABst(BST1))
-  // console.log(third_largest(BST1))
-  // console.log(isBalanced(BST1))
-  // console.log(' ')
-  // console.log(BST2)
-  // console.log(tree(BST2))
-  // console.log(height(BST2))
-  // console.log(isABst(BST2))
-  // console.log(third_largest(BST2))
-  // console.log(isBalanced(BST2))
-  // console.log(' ')
+  console.log(BST1)
+  console.log(tree(BST1))
+  console.log(height(BST1))
+  console.log(isABst(BST1))
+  console.log(third_largest(BST1))
+  console.log(isBalanced(BST1))
+  console.log(' ')
+  console.log(BST2)
+  console.log(tree(BST2))
+  console.log(height(BST2))
+  console.log(isABst(BST2))
+  console.log(third_largest(BST2))
+  console.log(isBalanced(BST2))
+  console.log(' ')
 
-  // let arr3 = [3, 5, 4, 6, 1, 2, 0]
-  // let arr4 = [3, 1, 5, 2, 4, 6, 0]
+  let arr3 = [3, 5, 4, 6, 1, 2, 0]
+  let arr4 = [3, 1, 5, 2, 4, 6, 0]
 
 
 
-  // console.log(isIdenticalTree(arr3, arr4))
+  console.log(isIdenticalTree(arr3, arr4))
 
-  console.log(BST1.find(9))
+  
 
 }
 
