@@ -4,32 +4,46 @@
 const { BinarySearchTree } = require('./binarySearchTree');
 
 function tree(t) {
+  //If tree is empty, return with a sum of 0
   if (!t) {
     return 0
   }
+  //Otherwise, return the sum of the left subtree and right subtree
   return tree(t.left) + t.value + tree(t.right)
 }
 
 function height(t) {
+  //If three is empty, return with a height of 0
   if (!t) {
     return 0
   }
+  /*If there is a left subtree and a right subtree, compare the heights
+  of the two subtrees. */
   else if (t.left && t.right) {
     const left = height(t.left)
     const right = height(t.right)
+    /*If the left subtree is greater, return the height
+    of the left subtree plus 1.*/
     if (left > right) {
       return 1 + left
     }
+    /*Otherwise, return the height of the right
+    subtree plus 1 */
     else {
       return 1 + right
     }
   }
+  /*If there is only a left subtree, return the height of the left subtree
+  plus 1 */
   else if (t.left) {
     return 1 + height(t.left)
   }
+  /*If there is only a right subtree, return the height of the right subtree
+  plus 1 */
   else if (t.right) {
     return 1 + height(t.right)
   }
+  //Otherwise, the tree only has one node. So return 1 as the height
   return 1
 }
 
