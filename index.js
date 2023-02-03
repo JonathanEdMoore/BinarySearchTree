@@ -2,6 +2,7 @@
 'use strict'
 
 const { BinarySearchTree } = require('./binarySearchTree');
+const { rightRotate, leftRotate, leftRightRotate, rightLeftRotate, balanceFactor, rebalance } = require('./bst_helpers')
 
 function tree(t) {
   //If tree is empty, return with a sum of 0
@@ -10,41 +11,6 @@ function tree(t) {
   }
   //Otherwise, return the sum of the left subtree and right subtree
   return tree(t.left) + t.value + tree(t.right)
-}
-
-function height(t) {
-  //If three is empty, return with a height of 0
-  if (!t) {
-    return 0
-  }
-  /*If there is a left subtree and a right subtree, compare the heights
-  of the two subtrees. */
-  else if (t.left && t.right) {
-    const left = height(t.left)
-    const right = height(t.right)
-    /*If the left subtree is greater, return the height
-    of the left subtree plus 1.*/
-    if (left > right) {
-      return 1 + left
-    }
-    /*Otherwise, return the height of the right
-    subtree plus 1 */
-    else {
-      return 1 + right
-    }
-  }
-  /*If there is only a left subtree, return the height of the left subtree
-  plus 1 */
-  else if (t.left) {
-    return 1 + height(t.left)
-  }
-  /*If there is only a right subtree, return the height of the right subtree
-  plus 1 */
-  else if (t.right) {
-    return 1 + height(t.right)
-  }
-  //Otherwise, the tree only has one node. So return 1 as the height
-  return 1
 }
 
 function isABst(t) {
@@ -149,37 +115,21 @@ function isIdenticalTree(arr1, arr2) {
 }
 
 function main() {
-  let BST1 = new BinarySearchTree()
-  let BST2 = new BinarySearchTree()
-  let arr1 = [3, 1, 4, 6, 9, 2, 5, 7]
-  let arr2 = ['E', 'A', 'S', 'Y', 'Q', 'U', 'E', 'S', 'T', 'I', 'O', 'N']
-  for (let i = 0; i < arr1.length; i++) {
-    BST1.insert(arr1[i], arr1[i])
-  }
-  for (let i = 0; i < arr2.length; i++) {
-    BST2.insert(arr2[i], arr2[i])
-  }
-  console.log(BST1)
-  console.log(tree(BST1))
-  console.log(height(BST1))
-  console.log(isABst(BST1))
-  console.log(third_largest(BST1))
-  console.log(isBalanced(BST1))
-  console.log(' ')
-  console.log(BST2)
-  console.log(tree(BST2))
-  console.log(height(BST2))
-  console.log(isABst(BST2))
-  console.log(third_largest(BST2))
-  console.log(isBalanced(BST2))
-  console.log(' ')
+  let tree = new BinarySearchTree()
+  let arr = [1, 2, 3, 4, 5, 6]
 
-  let arr3 = [3, 5, 4, 6, 1, 2, 0]
-  let arr4 = [3, 1, 5, 2, 4, 6, 0]
+  tree.insert(1, 1)
+  
 
+  tree.insert(2, 2)
+  
+ 
 
+  tree.insert(3, 3)
 
-  console.log(isIdenticalTree(arr3, arr4))
+  console.log(tree)
+  
+  
 
   
 

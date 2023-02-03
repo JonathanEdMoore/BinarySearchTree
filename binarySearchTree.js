@@ -45,6 +45,7 @@ class BinarySearchTree {
         this.right.insert(key, value)
       }
     }
+
   }
 
   find(key) {
