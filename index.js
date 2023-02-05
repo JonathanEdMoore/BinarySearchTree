@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
 'use strict'
 
-const { BinarySearchTree } = require('./binarySearchTree');
-const { rightRotate, leftRotate, leftRightRotate, rightLeftRotate, balanceFactor, rebalance } = require('./bst_helpers')
+const AVL = require('./avl');
 
 function tree(t) {
   //If tree is empty, return with a sum of 0
@@ -115,23 +114,15 @@ function isIdenticalTree(arr1, arr2) {
 }
 
 function main() {
-  let tree = new BinarySearchTree()
-  let arr = [1, 2, 3, 4, 5, 6]
+  let tree = new AVL()
 
-  tree.insert(1, 1)
-  
+  let arr = [1, 2, 3, 4, 5, 6, 7]
 
-  tree.insert(2, 2)
-  
- 
-
-  tree.insert(3, 3)
+  for (let i = 0; i < arr.length; i++) {
+    tree.insert(arr[i], arr[i])
+  }
 
   console.log(tree)
-  
-  
-
-  
 
 }
 

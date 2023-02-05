@@ -109,4 +109,13 @@ function rebalance(t) {
   return t
 }
 
-module.exports = { rightRotate, leftRotate, rightLeftRotate, leftRightRotate, balanceFactor, rebalance }
+function root(t) {
+  if (t.parent === null) {
+    return t
+  }
+  else {
+    return root(t.parent)
+  }
+}
+
+module.exports = { rightRotate, leftRotate, rightLeftRotate, leftRightRotate, balanceFactor, rebalance, root }
