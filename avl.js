@@ -22,7 +22,6 @@ class AVL {
     this.root.remove(key)
     const rootNode = root(this.root)
     this.root = rootNode
-    return this.root
   }
 }
 
