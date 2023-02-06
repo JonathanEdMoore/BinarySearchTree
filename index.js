@@ -2,6 +2,8 @@
 'use strict'
 
 const AVL = require('./avl');
+const { BinarySearchTree } = require('./binarySearchTree');
+const { height } = require('./bst_helpers');
 
 function tree(t) {
   //If tree is empty, return with a sum of 0
@@ -116,13 +118,14 @@ function isIdenticalTree(arr1, arr2) {
 function main() {
   let tree = new AVL()
 
-
-  for (let i = 1; i < 1000; i++) {
-    tree.insert(i, i)
+  let arr1 = [1, 2, 3, 4, 5, 6, 7]
+  for (let i = 0; i < arr1.length; i++) {
+    tree.insert(arr1[i], arr1[i])
   }
 
   console.log(tree)
-
+  tree.remove(4)
+  console.log(tree)
 }
 
 main()

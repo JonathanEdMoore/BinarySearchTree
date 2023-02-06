@@ -22,6 +22,7 @@ class AVL {
     this.root.remove(key)
     const rootNode = root(this.root)
     this.root = rootNode
+    return this.root
   }
 }
 
@@ -63,6 +64,43 @@ class Node extends BinarySearchTree {
       else {
         this.right.insert(key, value)
       }
+    }
+    rebalance(this)
+  }
+
+  remove(key) {
+    if (this.key === key) {
+      if (this.left && this.right) {
+        const successor = this.right._findMin()
+        this.key = successor.key
+        this.value = successor.value
+        successor.remove(successor.key)
+      }
+      /* If the node only has a left child,
+      then you replace the node with its left child */
+      else if (this.left) {
+        this._replaceWith(this.left)
+      }
+      /* And similarly if the nod only has a right child
+      then you replace it with its right child */
+      else if (this.right) {
+        this._replaceWith(this.right)
+      }
+      /* If the node has no children then
+      simply remove it and any references to it
+      by calling "this._replaceWith(null)" */
+      else {
+        this._replaceWith(null)
+      }
+    }
+    else if (key < this.key && this.left) {
+      this.left.remove(key)
+    }
+    else if (key > this.key && this.right) {
+      this.right.remove(key)
+    }
+    else {
+      throw new Error('Key Error')
     }
     rebalance(this)
   }
