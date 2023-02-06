@@ -15,7 +15,7 @@ class AVL {
   }
 
   find(key) {
-    this.head.find(key)
+    return this.head.find(key)
   }
 
   remove(key) {

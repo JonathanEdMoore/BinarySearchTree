@@ -118,4 +118,4 @@ function root(t) {
   }
 }
 
-module.exports = { rightRotate, leftRotate, rightLeftRotate, leftRightRotate, balanceFactor, rebalance, root }
+module.exports = { rightRotate, leftRotate, rightLeftRotate, leftRightRotate, balanceFactor, rebalance, root, height }
