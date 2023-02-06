@@ -5,23 +5,23 @@ const { root } = require('./bst_helpers')
 
 class AVL {
   constructor() {
-    this.head = new BinarySearchTree()
+    this.root = new BinarySearchTree()
   }
 
   insert(key, value) {
-    this.head.insert(key, value)
-    const rootNode = root(this.head)
-    this.head = rootNode
+    this.root.insert(key, value)
+    const rootNode = root(this.root)
+    this.root = rootNode
   }
 
   find(key) {
-    return this.head.find(key)
+    return this.root.find(key)
   }
 
   remove(key) {
-    this.head.remove(key)
-    const rootNode = root(this.head)
-    this.head = rootNode
+    this.root.remove(key)
+    const rootNode = root(this.root)
+    this.root = rootNode
   }
 }
 
