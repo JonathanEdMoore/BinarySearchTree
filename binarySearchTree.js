@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 'use strict'
 
-const { rebalance } = require('./bst_helpers')
 
 class BinarySearchTree {
   constructor(key = null, value = null, parent = null) {
@@ -47,7 +46,6 @@ class BinarySearchTree {
         this.right.insert(key, value)
       }
     }
-    rebalance(this)
   }
 
   find(key) {
