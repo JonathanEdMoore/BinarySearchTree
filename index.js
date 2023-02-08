@@ -118,13 +118,10 @@ function isIdenticalTree(arr1, arr2) {
 function main() {
   let tree = new AVL()
 
-  let arr1 = [1, 2, 3, 4, 5, 6, 7]
-  for (let i = 0; i < arr1.length; i++) {
-    tree.insert(arr1[i], arr1[i])
+  for (let i = 1; i <= 10000; i++) {
+    tree.insert(i, i)
   }
 
-  console.log(tree)
-  tree.remove(4)
   console.log(tree)
 }
 
