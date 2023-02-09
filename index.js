@@ -117,12 +117,17 @@ function isIdenticalTree(arr1, arr2) {
 
 function main() {
   let tree = new AVL()
+  let binTree = new BinarySearchTree()
 
-  for (let i = 1; i <= 10000; i++) {
+  for (let i = 1; i <= 1024; i++) {
     tree.insert(i, i)
+    binTree.insert(i, i)
   }
 
   console.log(tree)
+  console.log(height(tree.root))
+  console.log(binTree)
+  console.log(height(binTree))
 }
 
 main()
