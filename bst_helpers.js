@@ -110,14 +110,10 @@ function rebalance(t) {
 }
 
 function root(t) {
-  // If the parent node is null, then this is the root node. So return this node  
-  if (t.parent === null) {
-    return t
+  while (t.parent !== null) {
+    t = t.parent
   }
-  // Otherwise, find the root of the parent node
-  else {
-    return root(t.parent)
-  }
+  return t
 }
 
 module.exports = { rightRotate, leftRotate, rightLeftRotate, leftRightRotate, balanceFactor, rebalance, root, height }

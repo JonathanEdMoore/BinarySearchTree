@@ -119,7 +119,7 @@ function main() {
   let tree = new AVL()
   let binTree = new BinarySearchTree()
 
-  for (let i = 1; i <= 1024; i++) {
+  for (let i = 1; i <= 10; i++) {
     tree.insert(i, i)
     binTree.insert(i, i)
   }
